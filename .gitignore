@@ -18,6 +18,10 @@ yarn-error.log*
 
 # env files
 .env*
+.env.local
+
+# scripts with secrets (DO NOT COMMIT)
+scripts/set-env-vars.js
 
 # vercel
 .vercel
