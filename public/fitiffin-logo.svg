@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Briefcase/Tiffin Box Design -->
+  <defs>
+    <linearGradient id="briefcaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d8659;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a5236;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Back briefcase outline (darker green) -->
+  <path d="M 30 55 L 30 115 Q 30 130 45 130 L 155 130 Q 170 130 170 115 L 170 55 Z" fill="#1a5236" rx="8"/>
+  
+  <!-- Front briefcase (bright green) -->
+  <path d="M 20 45 L 20 105 Q 20 125 35 125 L 165 125 Q 180 125 180 105 L 180 45 Z" fill="#2d8659" rx="8" stroke="#1a5236" stroke-width="2"/>
+  
+  <!-- Handle (lime green accent) -->
+  <path d="M 70 45 Q 100 20 130 45" fill="none" stroke="#a8d965" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 70 45 Q 100 25 130 45" fill="none" stroke="#bce055" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Decorative circles (orange and yellow accents) -->
+  <circle cx="60" cy="65" r="6" fill="#ff6b35"/>
+  <circle cx="100" cy="60" r="6" fill="#ff6b35"/>
+  <circle cx="140" cy="65" r="6" fill="#ff6b35"/>
+  <circle cx="75" cy="75" r="5" fill="#ffa500"/>
+  <circle cx="125" cy="75" r="5" fill="#ffa500"/>
+  
+  <!-- Text: FiTiffin -->
+  <text x="100" y="155" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#2d8659">FiTiffin</text>
+</svg>
