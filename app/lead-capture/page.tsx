@@ -13,6 +13,7 @@ export default function LeadCapturePage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     role: "",
     companySize: "",
@@ -36,6 +37,7 @@ export default function LeadCapturePage() {
     if (
       !formData.name.trim() ||
       !formData.email.trim() ||
+      !formData.phone.trim() ||
       !formData.company.trim() ||
       !formData.role.trim() ||
       !formData.companySize.trim() ||
@@ -62,6 +64,7 @@ export default function LeadCapturePage() {
         setFormData({
           name: "",
           email: "",
+          phone: "",
           company: "",
           role: "",
           companySize: "",
@@ -134,6 +137,20 @@ export default function LeadCapturePage() {
                     required
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                     placeholder="you@company.com"
+                  />
+                </div>
+
+                {/* Phone Number */}
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    placeholder="+91 98765 43210"
                   />
                 </div>
 

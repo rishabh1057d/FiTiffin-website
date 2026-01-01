@@ -5,9 +5,9 @@ export async function POST(request: Request) {
     const body = await request.json()
 
     // Validate required fields
-    const { name, email, company, role, companySize, city, contactMethod } = body
+    const { name, email, phone, company, role, companySize, city, contactMethod } = body
 
-    if (!name || !email || !company || !role || !companySize || !city || !contactMethod) {
+    if (!name || !email || !phone || !company || !role || !companySize || !city || !contactMethod) {
       return Response.json({ error: "Missing required fields" }, { status: 400 })
     }
 
@@ -19,6 +19,7 @@ export async function POST(request: Request) {
         {
           name,
           email,
+          phone,
           company,
           role,
           company_size: companySize,
