@@ -63,9 +63,14 @@ export default function AboutPage() {
               friction around workplace nutrition by delivering consistent, delicious, protein-rich meals that fuel
               teams for success.
             </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Every tiffin we deliver is backed by nutritional science, crafted by our network of trusted cloud kitchen
+              partners, and designed to support the modern professional's wellness journey.
+            </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Every tiffin we deliver is backed by nutritional science, crafted by our team of experts, and designed to
-              support the modern professional's wellness journey.
+              We partner with established cloud kitchens across India to ensure fresh, high-quality meals reach your
+              office every day, while supporting local food businesses and maintaining the highest standards of
+              nutrition and taste.
             </p>
           </Card>
         </div>
@@ -178,6 +183,11 @@ export default function AboutPage() {
               <li>
                 <Link href="/about" className="hover:text-foreground transition-colors">
                   About
+                </Link>
+              </li>
+              <li>
+                <Link href="/cloud-kitchen-partner" className="hover:text-foreground transition-colors">
+                  Partner With Us
                 </Link>
               </li>
               <li>
