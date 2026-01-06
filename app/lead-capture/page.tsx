@@ -93,11 +93,11 @@ export default function LeadCapturePage() {
       <div className="w-full max-w-4xl">
         {!isSuccess ? (
           <div className="grid md:grid-cols-2 gap-12 items-stretch">
-            {/* Nutrition Expertise Image */}
+            {/* Hero Side Image */}
             <div className="hidden md:block relative rounded-2xl overflow-hidden border border-border">
               <Image
-                src="/images/nutrition-expertise.jpg"
-                alt="Nutritionist expertise and meal planning"
+                src="/images/office-wellness.jpg"
+                alt="Office team enjoying healthy FiTiffin lunches"
                 fill
                 className="object-cover"
               />
