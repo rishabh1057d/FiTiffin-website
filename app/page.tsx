@@ -28,17 +28,14 @@ export default function Home() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <Image
-              src="/fitiffin-logo.png"
+              src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png"
               alt="FiTiffin Logo"
-              width={40}
+              width={120}
               height={40}
-              className="w-10 h-10 hover:scale-110 transition-transform"
+              className="h-10 w-auto hover:scale-110 transition-transform"
             />
-            <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              FiTiffin
-            </div>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a
@@ -468,9 +465,14 @@ export default function Home() {
       <footer className="border-t border-border py-16 px-6 bg-card/30">
         <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-8 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <Image src="/fitiffin-logo.png" alt="FiTiffin Logo" width={32} height={32} className="w-8 h-8" />
-              <h3 className="font-bold text-lg text-foreground">FiTiffin</h3>
+            <div className="flex items-center mb-3">
+              <Image 
+                src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png" 
+                alt="FiTiffin Logo" 
+                width={120} 
+                height={40} 
+                className="h-10 w-auto" 
+              />
             </div>
             <p className="text-sm text-muted-foreground">
               Nourishing teams. Fueling growth. <br /> One meal at a time.

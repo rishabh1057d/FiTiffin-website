@@ -26,9 +26,14 @@ export default function AboutPage() {
       {/* Navigation */}
       <nav className="fixed w-full top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/fitiffin-logo.png" alt="FiTiffin Logo" width={40} height={40} className="w-10 h-10" />
-            <div className="text-xl font-bold text-foreground tracking-tight">FiTiffin</div>
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png" 
+              alt="FiTiffin Logo" 
+              width={120} 
+              height={40} 
+              className="h-10 w-auto" 
+            />
           </Link>
           <Link href="/">
             <Button variant="ghost" className="gap-2">
@@ -134,9 +139,14 @@ export default function AboutPage() {
       <footer className="border-t border-border py-12 px-6 bg-card">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <Image src="/fitiffin-logo.png" alt="FiTiffin Logo" width={32} height={32} className="w-8 h-8" />
-              <h3 className="font-semibold text-foreground">FiTiffin</h3>
+            <div className="flex items-center mb-2">
+              <Image 
+                src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png" 
+                alt="FiTiffin Logo" 
+                width={120} 
+                height={40} 
+                className="h-10 w-auto" 
+              />
             </div>
             <p className="text-sm text-muted-foreground">Healthy lunches for modern workplaces.</p>
             <div className="mt-4 space-y-2">

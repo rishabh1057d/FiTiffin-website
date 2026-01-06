@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/fitiffin-logo.png",
+        url: "/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png",
         width: 512,
         height: 512,
         alt: "FiTiffin logo",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/fitiffin-logo.png"],
+    images: ["/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png"],
   },
   robots: {
     index: true,
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
       {
-        url: "/fitiffin-logo.png",
+        url: "/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png",
       },
     ],
     apple: "/apple-icon.png",
@@ -100,7 +100,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "FiTiffin",
     url: "https://www.fitiffin.com",
-    logo: "https://www.fitiffin.com/fitiffin-logo.png",
+    logo: "https://www.fitiffin.com/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png",
     description: siteDescription,
     contactPoint: [
       {

@@ -98,9 +98,14 @@ export default function MenuPage() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <Image src="/fitiffin-logo.png" alt="FiTiffin Logo" width={32} height={32} className="w-8 h-8" />
-            <span className="text-2xl font-bold text-foreground tracking-tight">FiTiffin</span>
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <Image 
+              src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png" 
+              alt="FiTiffin Logo" 
+              width={120} 
+              height={40} 
+              className="h-10 w-auto" 
+            />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <a href="#vegetarian" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
