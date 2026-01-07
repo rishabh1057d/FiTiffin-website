@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowRight, Check, Users, Leaf, Clock, TrendingUp, Award, Zap } from "lucide-react"
+import { ArrowRight, Check, Users, Leaf, Clock, TrendingUp, Award, Zap, Phone, UtensilsCrossed, Target, ArrowUp } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -376,47 +376,52 @@ export default function Home() {
 
       {/* How It Works */}
       <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Getting Started is Simple</h2>
-            <p className="text-lg text-muted-foreground">Four steps to transform your workplace lunch culture.</p>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">Getting Started is Simple</h2>
+            <p className="text-base md:text-lg text-muted-foreground">Four steps to transform your workplace lunch culture.</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
                 step: "1",
                 title: "Book a Call",
                 description: "Chat with our wellness expert. Understand your team's needs and preferences.",
-                icon: "📞",
+                Icon: Phone,
               },
               {
                 step: "2",
                 title: "Customize Your Menu",
                 description: "Choose meals that fit your team. Dietary options, portions, delivery schedule.",
-                icon: "🍽️",
+                Icon: UtensilsCrossed,
               },
               {
                 step: "3",
                 title: "Start Your Pilot",
                 description: "Try one week free. No commitment. Experience the difference firsthand.",
-                icon: "🎯",
+                Icon: Target,
               },
               {
                 step: "4",
                 title: "Grow With Us",
                 description: "See the results. Scale as your team grows. Continuous improvement.",
-                icon: "🚀",
+                Icon: ArrowUp,
               },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="mb-4 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent text-white flex items-center justify-center font-bold mx-auto text-2xl shadow-lg">
-                  {item.icon}
+            ].map((item, idx) => {
+              const IconComponent = item.Icon
+              return (
+                <div key={idx} className="text-center animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
+                  <div className="mb-6">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/20 flex items-center justify-center mx-auto shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                      <IconComponent className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-foreground mb-3 text-lg md:text-xl">{item.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed px-2">{item.description}</p>
                 </div>
-                <h3 className="font-bold text-foreground mb-2 text-lg">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -522,9 +527,9 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link href="/blog" className="hover:text-primary transition-colors">
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -533,14 +538,14 @@ export default function Home() {
             <h4 className="font-bold text-foreground mb-4 text-sm uppercase tracking-wide">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link href="/privacy" className="hover:text-primary transition-colors">
                   Privacy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link href="/terms" className="hover:text-primary transition-colors">
                   Terms
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

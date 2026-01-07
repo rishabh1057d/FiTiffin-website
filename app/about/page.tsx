@@ -1,26 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, Mail } from "lucide-react"
+import { ArrowLeft, Mail, Check, Target, Users, Shield } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
 export default function AboutPage() {
-  const founders = [
-    {
-      name: "Ashank",
-      role: "Co-Founder",
-      description:
-        "Visionary leader focused on transforming corporate wellness through innovative nutrition solutions.",
-      image: "/ashank-fitiffin-founder.jpg",
-    },
-    {
-      name: "Aditya",
-      role: "Co-Founder",
-      description: "Operations expert dedicated to seamless delivery and customer success in enterprise settings.",
-      image: "/aditya-fitiffin-founder.jpg",
-    },
-  ]
-
   return (
     <main className="min-h-screen bg-background">
       {/* Navigation */}
@@ -45,60 +29,117 @@ export default function AboutPage() {
       </nav>
 
       {/* Header */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight text-balance">
-            About FiTiffin
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 md:mb-6 leading-tight text-balance">
+            About FITIFFIN
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty leading-relaxed">
-            Founded by Ashank and Aditya, FiTiffin is reimagining corporate wellness through thoughtful nutrition and
-            operational excellence.
+          <p className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto text-pretty leading-relaxed">
+            India's first corporate-focused healthy meal distribution platform built on a strong partnership model with verified cloud kitchens.
           </p>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-20 px-6">
+      {/* Who We Are Section */}
+      <section className="py-8 md:py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <Card className="p-12 border border-border bg-card/50 backdrop-blur-sm">
-            <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              We believe that healthy employees are happy and productive employees. Our mission is to eliminate the
-              friction around workplace nutrition by delivering consistent, delicious, protein-rich meals that fuel
-              teams for success.
+          <Card className="p-6 md:p-12 border border-border bg-card/50 backdrop-blur-sm">
+            <div className="flex items-center gap-3 mb-4 md:mb-6">
+              <div className="p-2 md:p-3 rounded-lg bg-primary/10 text-primary">
+                <Users className="w-5 h-5 md:w-6 md:h-6" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">Who We Are</h2>
+            </div>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
+              FITIFFIN is India's first corporate-focused healthy meal distribution platform built on a strong partnership model with verified cloud kitchens.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Every tiffin we deliver is backed by nutritional science, crafted by our network of trusted cloud kitchen
-              partners, and designed to support the modern professional's wellness journey.
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
+              Instead of running our own kitchen, we collaborate with multiple quality-controlled cloud kitchens across cities to deliver affordable, hygienic and nutritionally balanced meals to offices, corporate parks, and enterprises.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We partner with established cloud kitchens across India to ensure fresh, high-quality meals reach your
-              office every day, while supporting local food businesses and maintaining the highest standards of
-              nutrition and taste.
+            <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 md:p-6">
+              <p className="text-base md:text-lg font-semibold text-foreground">
+                Our goal is simple: Make healthy eating effortless at workplaces.
+              </p>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* What We Do Section */}
+      <section className="py-8 md:py-20 px-6 bg-secondary/30">
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-6 md:p-12 border border-border bg-card/50 backdrop-blur-sm">
+            <div className="flex items-center gap-3 mb-4 md:mb-6">
+              <div className="p-2 md:p-3 rounded-lg bg-primary/10 text-primary">
+                <Target className="w-5 h-5 md:w-6 md:h-6" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">What We Do</h2>
+            </div>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
+              We act as the bridge between:
+            </p>
+            <ul className="space-y-3 md:space-y-4 mb-4 md:mb-6">
+              <li className="flex items-start gap-3">
+                <div className="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
+                <p className="text-base md:text-lg text-muted-foreground">Companies looking to provide daily meals to employees</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
+                <p className="text-base md:text-lg text-muted-foreground">Reliable cloud kitchens that can cook and pack at scale</p>
+              </li>
+            </ul>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              FITIFFIN handles the onboarding, quality standards, subscription management, billing, menu curation, corporate support and reliable delivery — so both sides can focus on what they do best.
             </p>
           </Card>
         </div>
       </section>
 
-      {/* Founders Section */}
-      <section className="py-20 px-6 bg-secondary/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-16 text-center">Meet Our Founders</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            {founders.map((founder, idx) => (
-              <Card key={idx} className="overflow-hidden border border-border bg-card/50 backdrop-blur-sm">
-                <div className="relative h-64 w-full">
-                  <Image src={founder.image || "/placeholder.svg"} alt={founder.name} fill className="object-cover" />
+      {/* Why FITIFFIN Exists Section */}
+      <section className="py-8 md:py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-6 md:p-12 border border-border bg-card/50 backdrop-blur-sm">
+            <div className="flex items-center gap-3 mb-4 md:mb-6">
+              <div className="p-2 md:p-3 rounded-lg bg-primary/10 text-primary">
+                <Shield className="w-5 h-5 md:w-6 md:h-6" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">Why FITIFFIN Exists</h2>
+            </div>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
+              Corporate meal programs in India are broken — inconsistent quality, unreliable vendors, and poor nutrition standards.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
+              We fixed this by building a centralized platform that:
+            </p>
+            <div className="space-y-2 md:space-y-3">
+              {[
+                "Curates menus with diet options",
+                "Maintains kitchen hygiene & SOP checks",
+                "Ensures standard portioning & pricing",
+                "Provides single-point corporate billing",
+                "Enables scale without infrastructure burden",
+                "Provides on time delivery"
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <Check className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-base md:text-lg text-muted-foreground">{item}</p>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-1">{founder.name}</h3>
-                  <p className="text-primary text-sm font-medium mb-4">{founder.role}</p>
-                  <p className="text-muted-foreground leading-relaxed">{founder.description}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="py-8 md:py-20 px-6 bg-gradient-to-b from-primary/5 to-transparent">
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-6 md:p-12 border border-border bg-card/50 backdrop-blur-sm text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">Our Vision</h2>
+            <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
+              To become India's most trusted corporate meal partner — improving employee health, productivity and satisfaction one tiffin at a time.
+            </p>
+          </Card>
         </div>
       </section>
 
@@ -201,9 +242,9 @@ export default function AboutPage() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link href="/blog" className="hover:text-foreground transition-colors">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="mailto:info@fitiffin.com" className="hover:text-foreground transition-colors">
@@ -216,14 +257,14 @@ export default function AboutPage() {
             <h4 className="font-semibold text-foreground mb-3 text-sm">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link href="/privacy" className="hover:text-foreground transition-colors">
                   Privacy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link href="/terms" className="hover:text-foreground transition-colors">
                   Terms
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
