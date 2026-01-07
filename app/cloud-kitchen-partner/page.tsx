@@ -101,9 +101,9 @@ export default function CloudKitchenPartnerPage() {
             <Image 
               src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png" 
               alt="FiTiffin Logo" 
-              width={120} 
-              height={40} 
-              className="h-10 w-auto" 
+              width={180} 
+              height={60} 
+              className="h-10 w-auto max-w-[150px]" 
             />
           </Link>
           <Link href="/">

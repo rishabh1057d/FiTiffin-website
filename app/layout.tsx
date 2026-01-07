@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       {
         url: "/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png",
         width: 512,
-        height: 512,
+        height: 256,
         alt: "FiTiffin logo",
       },
     ],

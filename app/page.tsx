@@ -32,9 +32,9 @@ export default function Home() {
             <Image
               src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png"
               alt="FiTiffin Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto hover:scale-110 transition-transform"
+              width={180}
+              height={60}
+              className="h-10 w-auto max-w-[150px] hover:scale-110 transition-transform"
             />
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -139,21 +139,29 @@ export default function Home() {
           </div>
 
           <div
-            className="grid grid-cols-3 gap-4 max-w-2xl mx-auto animate-fade-in-up"
+            className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
-            <div className="p-4 rounded-lg bg-card border border-border hover:border-primary/30 transition-all">
-              <p className="text-2xl font-bold text-primary">25g+</p>
-              <p className="text-xs text-muted-foreground">Protein Per Meal</p>
-            </div>
-            <div className="p-4 rounded-lg bg-card border border-border hover:border-primary/30 transition-all">
-              <p className="text-2xl font-bold text-primary">Fresh</p>
-              <p className="text-xs text-muted-foreground">Daily Delivery</p>
-            </div>
-            <div className="p-4 rounded-lg bg-card border border-border hover:border-primary/30 transition-all">
-              <p className="text-2xl font-bold text-primary">Custom</p>
-              <p className="text-xs text-muted-foreground">Tailored to You</p>
-            </div>
+            {[
+              { title: "25g+", subtitle: "Protein Per Meal", accent: "from-emerald-500/15 to-emerald-500/5" },
+              { title: "Fresh", subtitle: "Daily Delivery", accent: "from-lime-500/15 to-lime-500/5" },
+              { title: "Custom", subtitle: "Tailored to You", accent: "from-amber-500/15 to-amber-500/5" },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${item.accent} border border-border/70 shadow-[0_8px_24px_-16px_rgba(0,0,0,0.25)] hover:shadow-[0_10px_28px_-14px_rgba(0,0,0,0.3)] transition-all p-4 sm:p-5 min-h-[118px] flex flex-col items-start gap-2`}
+              >
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-primary shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-primary"></span>
+                  Core Benefit
+                </div>
+                <div>
+                  <p className="text-lg sm:text-xl font-bold text-primary leading-tight">{item.title}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">{item.subtitle}</p>
+                </div>
+                <div className="absolute inset-0 rounded-2xl border border-white/40 pointer-events-none" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -469,9 +477,9 @@ export default function Home() {
               <Image 
                 src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png" 
                 alt="FiTiffin Logo" 
-                width={120} 
-                height={40} 
-                className="h-10 w-auto" 
+                width={180} 
+                height={60} 
+                className="h-10 w-auto max-w-[150px]" 
               />
             </div>
             <p className="text-sm text-muted-foreground">
