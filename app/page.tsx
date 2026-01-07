@@ -149,15 +149,15 @@ export default function Home() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${item.accent} border border-border/70 shadow-[0_8px_24px_-16px_rgba(0,0,0,0.25)] hover:shadow-[0_10px_28px_-14px_rgba(0,0,0,0.3)] transition-all p-4 sm:p-5 min-h-[118px] flex flex-col items-start gap-2`}
+                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${item.accent} border border-border/70 shadow-[0_8px_24px_-16px_rgba(0,0,0,0.25)] hover:shadow-[0_10px_28px_-14px_rgba(0,0,0,0.3)] transition-all p-4 sm:p-5 min-h-[118px] flex flex-col items-center justify-center gap-3 text-center`}
               >
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-primary shadow-sm">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-primary shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-primary"></span>
                   Core Benefit
                 </div>
-                <div>
+                <div className="space-y-0.5">
                   <p className="text-lg sm:text-xl font-bold text-primary leading-tight">{item.title}</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">{item.subtitle}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{item.subtitle}</p>
                 </div>
                 <div className="absolute inset-0 rounded-2xl border border-white/40 pointer-events-none" />
               </div>
