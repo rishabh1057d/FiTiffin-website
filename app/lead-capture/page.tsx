@@ -90,29 +90,22 @@ export default function LeadCapturePage() {
         <span className="text-sm">Back to Home</span>
       </Link>
 
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-3xl">
         {!isSuccess ? (
-          <div className="grid md:grid-cols-2 gap-12 items-stretch">
-            {/* Hero Side Image */}
-            <div className="hidden md:block relative rounded-2xl overflow-hidden border border-border">
-              <Image
-                src="/images/office-wellness.jpg"
-                alt="Office team enjoying healthy FiTiffin lunches"
-                fill
-                className="object-cover"
-              />
+          <Card className="p-8 md:p-12 border border-border bg-card/50 backdrop-blur-sm shadow-lg">
+            <div className="mb-8 space-y-3 text-center">
+              <div className="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary px-4 py-2 text-xs font-semibold">
+                Book your free pilot
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">Let's get started</h1>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Tell us about your team and wellness goals. We'll follow up within 24 hours.
+              </p>
             </div>
 
-            <Card className="p-8 md:p-12 border border-border bg-card/50 backdrop-blur-sm">
-              <div className="mb-8">
-                <h1 className="text-4xl font-bold text-foreground mb-2">Let's get started</h1>
-                <p className="text-lg text-muted-foreground">
-                  Tell us about your team and wellness goals. We'll follow up within 24 hours.
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name */}
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name */}
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Full Name</label>
                   <input
@@ -125,8 +118,6 @@ export default function LeadCapturePage() {
                     placeholder="Your name"
                   />
                 </div>
-
-                {/* Email */}
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Work Email</label>
                   <input
@@ -139,8 +130,10 @@ export default function LeadCapturePage() {
                     placeholder="you@company.com"
                   />
                 </div>
+              </div>
 
-                {/* Phone Number */}
+              {/* Phone + City */}
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
                   <input
@@ -153,8 +146,22 @@ export default function LeadCapturePage() {
                     placeholder="+91 98765 43210"
                   />
                 </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">City</label>
+                  <input
+                    type="text"
+                    name="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    placeholder="Your city"
+                  />
+                </div>
+              </div>
 
-                {/* Company */}
+              {/* Company + Role */}
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Company Name</label>
                   <input
@@ -167,8 +174,6 @@ export default function LeadCapturePage() {
                     placeholder="Your company"
                   />
                 </div>
-
-                {/* Role */}
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Your Role</label>
                   <select
@@ -186,8 +191,10 @@ export default function LeadCapturePage() {
                     <option value="other">Other</option>
                   </select>
                 </div>
+              </div>
 
-                {/* Company Size */}
+              {/* Company size + contact method */}
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Company Size</label>
                   <select
@@ -204,22 +211,6 @@ export default function LeadCapturePage() {
                     <option value="500+">500+ employees</option>
                   </select>
                 </div>
-
-                {/* City */}
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">City</label>
-                  <input
-                    type="text"
-                    name="city"
-                    value={formData.city}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="Your city"
-                  />
-                </div>
-
-                {/* Contact Method */}
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Preferred Contact Method</label>
                   <select
@@ -235,26 +226,26 @@ export default function LeadCapturePage() {
                     <option value="both">Both</option>
                   </select>
                 </div>
+              </div>
 
-                {/* Privacy Notice */}
-                <div className="bg-secondary/30 border border-border rounded-lg p-4">
-                  <p className="text-xs text-muted-foreground text-center">
-                    We respect your privacy. Your information will be used solely for FiTiffin business inquiries. No
-                    spam, ever.
-                  </p>
-                </div>
+              {/* Privacy Notice */}
+              <div className="bg-secondary/30 border border-border rounded-lg p-4">
+                <p className="text-xs text-muted-foreground text-center">
+                  We respect your privacy. Your information will be used solely for FiTiffin business inquiries. No spam,
+                  ever.
+                </p>
+              </div>
 
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-accent text-primary-foreground rounded-full text-base h-12 font-medium"
-                >
-                  {isSubmitting ? "Submitting..." : "Book Your Free Pilot"}
-                </Button>
-              </form>
-            </Card>
-          </div>
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary hover:bg-accent text-primary-foreground rounded-full text-base h-12 font-medium"
+              >
+                {isSubmitting ? "Submitting..." : "Book Your Free Pilot"}
+              </Button>
+            </form>
+          </Card>
         ) : (
           <Card className="p-8 md:p-12 border border-border bg-card/50 backdrop-blur-sm text-center">
             <div className="mb-6 flex justify-center">

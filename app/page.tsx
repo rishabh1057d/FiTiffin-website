@@ -32,9 +32,9 @@ export default function Home() {
             <Image
               src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png"
               alt="FiTiffin Logo"
-              width={180}
-              height={60}
-              className="h-10 w-auto max-w-[150px] hover:scale-110 transition-transform"
+              width={260}
+              height={80}
+              className="h-10 md:h-14 w-auto max-w-[170px] md:max-w-[260px] hover:scale-110 transition-transform"
             />
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -154,13 +154,13 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-primary shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-primary"></span>
                   Core Benefit
-                </div>
+            </div>
                 <div className="space-y-0.5">
                   <p className="text-lg sm:text-xl font-bold text-primary leading-tight">{item.title}</p>
                   <p className="text-xs sm:text-sm text-muted-foreground">{item.subtitle}</p>
-                </div>
+            </div>
                 <div className="absolute inset-0 rounded-2xl border border-white/40 pointer-events-none" />
-              </div>
+            </div>
             ))}
           </div>
         </div>

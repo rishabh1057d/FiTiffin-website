@@ -80,14 +80,14 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#faf8f3" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f0f0f" },
-  ],
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+    themeColor: [
+      { media: "(prefers-color-scheme: light)", color: "#faf8f3" },
+      { media: "(prefers-color-scheme: dark)", color: "#0f0f0f" },
+    ],
 }
 
 export default function RootLayout({
