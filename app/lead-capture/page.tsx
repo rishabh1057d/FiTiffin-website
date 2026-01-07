@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card"
 import { ArrowLeft, Check } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { BubbleBackground } from "@/components/bubble-background"
 
 export default function LeadCapturePage() {
   const [formData, setFormData] = useState({
@@ -80,7 +81,14 @@ export default function LeadCapturePage() {
   }
 
   return (
-    <main className="min-h-screen bg-background flex items-center justify-center px-6 py-12">
+    <main className="min-h-screen bg-background flex items-center justify-center px-6 py-12 relative">
+      {/* Bubble Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <BubbleBackground 
+          interactive={true}
+          className="w-full h-full opacity-50"
+        />
+      </div>
       {/* Back Link */}
       <Link
         href="/"

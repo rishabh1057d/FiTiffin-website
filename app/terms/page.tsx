@@ -3,10 +3,19 @@ import { Card } from "@/components/ui/card"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { BubbleBackground } from "@/components/bubble-background"
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background relative">
+      {/* Bubble Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <BubbleBackground 
+          interactive={true}
+          className="w-full h-full opacity-50"
+        />
+      </div>
+      
       {/* Navigation */}
       <nav className="fixed w-full top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">

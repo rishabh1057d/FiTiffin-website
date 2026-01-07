@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card"
 import { ArrowRight, Check, Users, Leaf, Clock, TrendingUp, Award, Zap, Phone, UtensilsCrossed, Target, ArrowUp } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { BubbleBackground } from "@/components/bubble-background"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -20,7 +21,15 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-background overflow-hidden">
+    <main className="min-h-screen bg-background overflow-hidden relative">
+      {/* Bubble Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <BubbleBackground 
+          interactive={true}
+          className="w-full h-full opacity-50"
+        />
+      </div>
+      
       {/* Navigation */}
       <nav
         className={`fixed w-full top-0 z-50 transition-all duration-300 ${
