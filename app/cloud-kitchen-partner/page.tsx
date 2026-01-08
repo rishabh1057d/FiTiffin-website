@@ -4,7 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, Check, Building2, UtensilsCrossed, Users, TrendingUp } from "lucide-react"
+import { ArrowLeft, Check, Building2, UtensilsCrossed, Users, TrendingUp, AlertCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { BubbleBackground } from "@/components/bubble-background"
@@ -26,6 +26,7 @@ export default function CloudKitchenPartnerPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -40,6 +41,15 @@ export default function CloudKitchenPartnerPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    // Prevent double submission
+    if (isSubmitting) {
+      return
+    }
+
+    // Clear previous errors
+    setError(null)
+
+    // Basic client-side validation
     if (
       !formData.ownerName.trim() ||
       !formData.email.trim() ||
@@ -50,23 +60,42 @@ export default function CloudKitchenPartnerPage() {
       !formData.capacity.trim() ||
       !formData.cuisines.trim()
     ) {
-      alert("Please fill in all required fields")
+      setError("Please fill in all required fields")
       return
     }
 
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("/api/cloud-kitchen-partner", {
+      const response = await fetch("/api/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          type: "cloud-kitchen",
+          name: formData.ownerName.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          company: formData.kitchenName.trim(),
+          kitchenName: formData.kitchenName.trim(),
+          ownerName: formData.ownerName.trim(),
+          city: formData.city.trim(),
+          address: formData.address.trim(),
+          capacity: formData.capacity.trim(),
+          cuisines: formData.cuisines.trim(),
+          fssaiLicense: formData.fssaiLicense.trim() || undefined,
+          experience: formData.experience || undefined,
+          currentOrders: formData.currentOrders.trim() || undefined,
+          message: formData.message.trim() || undefined,
+        }),
       })
+
+      const data = await response.json()
 
       if (response.ok) {
         setIsSuccess(true)
+        setError(null)
         setFormData({
           ownerName: "",
           email: "",
@@ -82,12 +111,10 @@ export default function CloudKitchenPartnerPage() {
           message: "",
         })
       } else {
-        const data = await response.json()
-        alert(data.error || "Failed to submit. Please try again.")
+        setError(data.error || "Failed to submit form. Please try again.")
       }
     } catch (error) {
-      console.error("Error submitting form:", error)
-      alert("An error occurred. Please try again.")
+      setError("An unexpected error occurred. Please try again later.")
     } finally {
       setIsSubmitting(false)
     }
@@ -375,6 +402,14 @@ export default function CloudKitchenPartnerPage() {
                     placeholder="Tell us more about your kitchen, specialties, or any questions..."
                   />
                 </div>
+
+                {/* Error Message */}
+                {error && (
+                  <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4 flex items-start gap-3">
+                    <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-destructive">{error}</p>
+                  </div>
+                )}
 
                 {/* Privacy Notice */}
                 <div className="bg-secondary/30 border border-border rounded-lg p-4">

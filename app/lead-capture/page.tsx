@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, Check } from "lucide-react"
+import { ArrowLeft, Check, AlertCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { BubbleBackground } from "@/components/bubble-background"
@@ -23,6 +23,7 @@ export default function LeadCapturePage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -35,6 +36,15 @@ export default function LeadCapturePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    // Prevent double submission
+    if (isSubmitting) {
+      return
+    }
+
+    // Clear previous errors
+    setError(null)
+
+    // Basic client-side validation
     if (
       !formData.name.trim() ||
       !formData.email.trim() ||
@@ -45,23 +55,36 @@ export default function LeadCapturePage() {
       !formData.city.trim() ||
       !formData.contactMethod.trim()
     ) {
-      alert("Please fill in all required fields")
+      setError("Please fill in all required fields")
       return
     }
 
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("/api/lead-capture", {
+      const response = await fetch("/api/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          type: "company",
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          company: formData.company.trim(),
+          role: formData.role,
+          companySize: formData.companySize,
+          city: formData.city.trim(),
+          contactMethod: formData.contactMethod,
+        }),
       })
+
+      const data = await response.json()
 
       if (response.ok) {
         setIsSuccess(true)
+        setError(null)
         setFormData({
           name: "",
           email: "",
@@ -72,9 +95,11 @@ export default function LeadCapturePage() {
           city: "",
           contactMethod: "email",
         })
+      } else {
+        setError(data.error || "Failed to submit form. Please try again.")
       }
     } catch (error) {
-      console.error("Error submitting form:", error)
+      setError("An unexpected error occurred. Please try again later.")
     } finally {
       setIsSubmitting(false)
     }
@@ -235,6 +260,14 @@ export default function LeadCapturePage() {
                   </select>
                 </div>
               </div>
+
+              {/* Error Message */}
+              {error && (
+                <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4 flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-destructive">{error}</p>
+                </div>
+              )}
 
               {/* Privacy Notice */}
               <div className="bg-secondary/30 border border-border rounded-lg p-4">
