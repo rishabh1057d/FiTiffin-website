@@ -176,7 +176,7 @@ export default function LeadCapturePage() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="+91 98765 43210"
+                    placeholder="Enter your phone number"
                   />
                 </div>
                 <div>
