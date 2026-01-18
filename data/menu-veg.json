@@ -1,0 +1,217 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Fit Paneer Power Thali",
+      "description": "Paneer-based meals rich in protein",
+      "items": [
+        {
+          "id": 1,
+          "name": "Paneer Bhurji Combo",
+          "description": "Paneer bhurji + lauki chana dal + 2 multigrain roti + rice + salad",
+          "calories": "580 kcal",
+          "protein": "28g",
+          "carbs": "90g",
+          "fat": "15g"
+        },
+        {
+          "id": 2,
+          "name": "Kadhai Paneer Combo",
+          "description": "Kadhai paneer + lobia + 3 multigrain roti + curd + sprout salad",
+          "calories": "700 kcal",
+          "protein": "35g",
+          "carbs": "80g",
+          "fat": "20g"
+        },
+        {
+          "id": 3,
+          "name": "Palak Paneer Combo",
+          "description": "Palak paneer + yellow dal + 2 roti + brown rice + salad",
+          "calories": "600 kcal",
+          "protein": "29g",
+          "carbs": "80g",
+          "fat": "15g"
+        },
+        {
+          "id": 4,
+          "name": "Methi Paneer Dry Combo",
+          "description": "Methi paneer dry + chana + 3 multigrain roti + curd + green salad",
+          "calories": "720 kcal",
+          "protein": "34g",
+          "carbs": "90g",
+          "fat": "21g"
+        },
+        {
+          "id": 5,
+          "name": "Garlic Paneer Tikka Combo",
+          "description": "Garlic paneer tikka + soya chunk + 3 multigrain roti + salad + curd",
+          "calories": "750 kcal",
+          "protein": "43g",
+          "carbs": "70g",
+          "fat": "25g"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Lean Green Veg Thali",
+      "description": "Light vegetable meals for healthy living",
+      "items": [
+        {
+          "id": 6,
+          "name": "Palak Tinda Aloo Combo",
+          "description": "Palak + tinda aloo + 3 roti + sprout salad + curd",
+          "calories": "640 kcal",
+          "protein": "25g",
+          "carbs": "90g",
+          "fat": "12g"
+        },
+        {
+          "id": 7,
+          "name": "Lauki Aloo Gobhi Combo",
+          "description": "Lauki + aloo gobhi + 2 multigrain roti + brown rice + green salad + curd",
+          "calories": "620 kcal",
+          "protein": "25g",
+          "carbs": "100g",
+          "fat": "12g"
+        },
+        {
+          "id": 8,
+          "name": "Cabbage Peas Combo",
+          "description": "Cabbage peas + yellow dal + 2 beetroot roti + brown rice + salad",
+          "calories": "600 kcal",
+          "protein": "26g",
+          "carbs": "90g",
+          "fat": "11g"
+        },
+        {
+          "id": 9,
+          "name": "Palak Corn Mushroom Combo",
+          "description": "Palak corn + mushroom + 3 roti + salad + curd",
+          "calories": "630 kcal",
+          "protein": "26g",
+          "carbs": "88g",
+          "fat": "16g"
+        },
+        {
+          "id": 10,
+          "name": "Baingan Bharta Pumpkin Combo",
+          "description": "Baingan bharta + pumpkin + 3 roti + sprout salad + curd",
+          "calories": "650 kcal",
+          "protein": "25g",
+          "carbs": "92g",
+          "fat": "16g"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Fiber Fuel Veg Thali",
+      "description": "High-fiber meals for digestive health",
+      "items": [
+        {
+          "id": 11,
+          "name": "Rajma Fried Rice",
+          "description": "Rajma + fried rice + salad + curd + green chutney",
+          "calories": "500 kcal",
+          "protein": "25g",
+          "carbs": "75g",
+          "fat": "12g",
+          "fiber": "12g"
+        },
+        {
+          "id": 12,
+          "name": "Chole Fried Rice",
+          "description": "Chole + fried rice + salad + curd + green chutney",
+          "calories": "500 kcal",
+          "protein": "25g",
+          "carbs": "80g",
+          "fat": "12g",
+          "fiber": "15g"
+        },
+        {
+          "id": 13,
+          "name": "Gajar Beans Bhindi Combo",
+          "description": "Gajar beans + bhindi + 3 beetroot roti + sprout salad + curd",
+          "calories": "600 kcal",
+          "protein": "28g",
+          "carbs": "90g",
+          "fat": "14g",
+          "fiber": "15g"
+        },
+        {
+          "id": 14,
+          "name": "Methi Aloo Tinda Combo",
+          "description": "Methi aloo + tinda masala + 3 multigrain roti + salad + curd",
+          "calories": "620 kcal",
+          "protein": "20g",
+          "carbs": "90g",
+          "fat": "14g",
+          "fiber": "13g"
+        },
+        {
+          "id": 15,
+          "name": "Mix Veg Dal Tadka",
+          "description": "Mix veg + dal tadka + 2 multigrain roti + rice + salad + green chutney",
+          "calories": "610 kcal",
+          "protein": "26g",
+          "carbs": "96g",
+          "fat": "12g",
+          "fiber": "13g"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Super Veg Protein Thali",
+      "description": "Plant-based high-protein powerhouse meals",
+      "items": [
+        {
+          "id": 16,
+          "name": "Soya Chunk Masala Combo",
+          "description": "Soya chunk masala + cabbage peas + 3 multigrain roti + salad + curd",
+          "calories": "580 kcal",
+          "protein": "37g",
+          "carbs": "64g",
+          "fat": "14g"
+        },
+        {
+          "id": 17,
+          "name": "Tofu Lobia Dal",
+          "description": "Tofu + lobia dal + 2 roti + brown rice + salad",
+          "calories": "610 kcal",
+          "protein": "34g",
+          "carbs": "82g",
+          "fat": "13g"
+        },
+        {
+          "id": 18,
+          "name": "Kadhai Paneer Mushroom Combo",
+          "description": "Kadhai paneer + mushroom peas + 3 multigrain roti + green salad + curd + green chutney",
+          "calories": "600 kcal",
+          "protein": "32g",
+          "carbs": "60g",
+          "fat": "10g"
+        },
+        {
+          "id": 19,
+          "name": "Low Fat Paneer Chana Dal",
+          "description": "Low fat paneer + chana dal + 2 multigrain roti + brown rice + curd",
+          "calories": "700 kcal",
+          "protein": "38g",
+          "carbs": "88g",
+          "fat": "16g"
+        },
+        {
+          "id": 20,
+          "name": "Soya Chaap Sabzi",
+          "description": "Soya chaap sabzi + 3 multigrain roti + salad + curd + green chutney",
+          "calories": "750 kcal",
+          "protein": "40g",
+          "carbs": "92g",
+          "fat": "22g"
+        }
+      ]
+    }
+  ]
+}

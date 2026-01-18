@@ -7,77 +7,33 @@ import { Leaf, Zap } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { BubbleBackground } from "@/components/bubble-background"
+import vegetarianMenuDataRaw from "@/data/menu-veg.json"
+import nonVegetarianMenuDataRaw from "@/data/menu-nonveg.json"
 
-const menuData = {
-  vegetarian: [
-    {
-      id: 1,
-      name: "Quinoa & Roasted Vegetable Bowl",
-      description: "Nutty quinoa with seasonal roasted vegetables, tahini dressing, and toasted seeds",
-      protein: "18g",
-      fiber: "8g",
-      freshness: "Fresh daily",
-    },
-    {
-      id: 2,
-      name: "Chickpea Curry with Brown Rice",
-      description: "Spiced chickpea curry with coconut milk, served with wholesome brown rice",
-      protein: "16g",
-      fiber: "9g",
-      freshness: "Fresh daily",
-    },
-    {
-      id: 3,
-      name: "Mediterranean Lentil Salad",
-      description: "Protein-rich lentils with cucumber, tomato, feta, and herb vinaigrette",
-      protein: "20g",
-      fiber: "10g",
-      freshness: "Fresh daily",
-    },
-    {
-      id: 4,
-      name: "Paneer Tikka Wrap",
-      description: "Marinated paneer with fresh vegetables and mint yogurt in whole wheat wrap",
-      protein: "22g",
-      fiber: "7g",
-      freshness: "Fresh daily",
-    },
-  ],
-  nonVegetarian: [
-    {
-      id: 5,
-      name: "Grilled Chicken Breast with Quinoa",
-      description: "Herb-marinated chicken breast with fluffy quinoa and roasted broccoli",
-      protein: "35g",
-      fiber: "6g",
-      freshness: "Fresh daily",
-    },
-    {
-      id: 6,
-      name: "Salmon with Sweet Potato",
-      description: "Wild-caught salmon fillet with roasted sweet potato and steamed greens",
-      protein: "32g",
-      fiber: "5g",
-      freshness: "Fresh daily",
-    },
-    {
-      id: 7,
-      name: "Lean Turkey Meatballs with Pasta",
-      description: "Ground turkey meatballs in tomato sauce with whole wheat pasta and spinach",
-      protein: "28g",
-      fiber: "7g",
-      freshness: "Fresh daily",
-    },
-    {
-      id: 8,
-      name: "Grilled Fish with Basmati Rice",
-      description: "Seasoned fish fillet with fragrant basmati rice and seasonal vegetables",
-      protein: "30g",
-      fiber: "4g",
-      freshness: "Fresh daily",
-    },
-  ],
+type MenuItem = {
+  id: number
+  name: string
+  description: string
+  calories: string
+  protein: string
+  carbs: string
+  fat: string
+  fiber?: string
 }
+
+type MenuCategory = {
+  id: number
+  title: string
+  description: string
+  items: MenuItem[]
+}
+
+type MenuData = {
+  categories: MenuCategory[]
+}
+
+const vegetarianMenuData = vegetarianMenuDataRaw as MenuData
+const nonVegetarianMenuData = nonVegetarianMenuDataRaw as MenuData
 
 export default function MenuPage() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -160,89 +116,123 @@ export default function MenuPage() {
 
       {/* Vegetarian Section */}
       <section id="vegetarian" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-4">
               <Leaf className="w-6 h-6 text-primary" />
-              <h2 className="text-3xl font-bold text-foreground">Vegetarian</h2>
+              <h2 className="text-3xl font-bold text-foreground">Vegetarian Menu</h2>
             </div>
             <p className="text-muted-foreground">Plant-based meals packed with protein and nutrients</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {menuData.vegetarian.map((meal) => (
-              <Card
-                key={meal.id}
-                className="p-8 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm group"
-              >
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {meal.name}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{meal.description}</p>
+          {vegetarianMenuData.categories.map((category) => (
+            <div key={category.id} className="mb-16">
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-foreground mb-2">{category.title}</h3>
+                <p className="text-muted-foreground">{category.description}</p>
+              </div>
 
-                <div className="space-y-3 pt-6 border-t border-border">
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">Protein</span>
-                    <span className="font-semibold text-foreground">{meal.protein}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">Fiber</span>
-                    <span className="font-semibold text-foreground">{meal.fiber}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground flex items-center gap-2">
-                      <Zap className="w-4 h-4" /> Freshness
-                    </span>
-                    <span className="font-semibold text-foreground text-primary">{meal.freshness}</span>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.items.map((meal) => (
+                  <Card
+                    key={meal.id}
+                    className="p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm group"
+                  >
+                    <h4 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {meal.name}
+                    </h4>
+                    <p className="text-muted-foreground text-xs mb-4 leading-relaxed">{meal.description}</p>
+
+                    <div className="space-y-2 pt-4 border-t border-border">
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Calories</span>
+                        <span className="font-semibold text-foreground">{meal.calories}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Protein</span>
+                        <span className="font-semibold text-foreground">{meal.protein}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Carbs</span>
+                        <span className="font-semibold text-foreground">{meal.carbs}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Fat</span>
+                        <span className="font-semibold text-foreground">{meal.fat}</span>
+                      </div>
+                      {meal.fiber && (
+                        <div className="flex justify-between items-center text-xs">
+                          <span className="text-muted-foreground">Fiber</span>
+                          <span className="font-semibold text-foreground">{meal.fiber}</span>
+                        </div>
+                      )}
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Non-Vegetarian Section */}
       <section id="non-vegetarian" className="py-20 px-6 bg-secondary/30">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-4">
               <Zap className="w-6 h-6 text-primary" />
-              <h2 className="text-3xl font-bold text-foreground">Non-Vegetarian</h2>
+              <h2 className="text-3xl font-bold text-foreground">Non-Vegetarian Menu</h2>
             </div>
             <p className="text-muted-foreground">High-protein meals with lean proteins and balanced nutrition</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {menuData.nonVegetarian.map((meal) => (
-              <Card
-                key={meal.id}
-                className="p-8 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm group"
-              >
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {meal.name}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{meal.description}</p>
+          {nonVegetarianMenuData.categories.map((category) => (
+            <div key={category.id} className="mb-16">
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-foreground mb-2">{category.title}</h3>
+                <p className="text-muted-foreground">{category.description}</p>
+              </div>
 
-                <div className="space-y-3 pt-6 border-t border-border">
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">Protein</span>
-                    <span className="font-semibold text-foreground">{meal.protein}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">Fiber</span>
-                    <span className="font-semibold text-foreground">{meal.fiber}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground flex items-center gap-2">
-                      <Zap className="w-4 h-4" /> Freshness
-                    </span>
-                    <span className="font-semibold text-foreground text-primary">{meal.freshness}</span>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.items.map((meal) => (
+                  <Card
+                    key={meal.id}
+                    className="p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 bg-card/50 backdrop-blur-sm group"
+                  >
+                    <h4 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {meal.name}
+                    </h4>
+                    <p className="text-muted-foreground text-xs mb-4 leading-relaxed">{meal.description}</p>
+
+                    <div className="space-y-2 pt-4 border-t border-border">
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Calories</span>
+                        <span className="font-semibold text-foreground">{meal.calories}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Protein</span>
+                        <span className="font-semibold text-foreground">{meal.protein}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Carbs</span>
+                        <span className="font-semibold text-foreground">{meal.carbs}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Fat</span>
+                        <span className="font-semibold text-foreground">{meal.fat}</span>
+                      </div>
+                      {meal.fiber && (
+                        <div className="flex justify-between items-center text-xs">
+                          <span className="text-muted-foreground">Fiber</span>
+                          <span className="font-semibold text-foreground">{meal.fiber}</span>
+                        </div>
+                      )}
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

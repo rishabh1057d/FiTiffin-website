@@ -1,0 +1,142 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Lean Chicken Thali",
+      "description": "Balanced chicken meals for everyday wellness",
+      "items": [
+        {
+          "id": 1,
+          "name": "Grilled Chicken Curry Combo",
+          "description": "Grilled chicken curry + mix veg + 2 multigrain roti + steamed rice + onion cucumber salad",
+          "calories": "656 kcal",
+          "protein": "40g",
+          "carbs": "92g",
+          "fat": "16g"
+        },
+        {
+          "id": 2,
+          "name": "Desi Chicken Bhurji Combo",
+          "description": "Desi chicken bhurji + mushroom + 3 roti + curd + green chutney",
+          "calories": "710 kcal",
+          "protein": "43g",
+          "carbs": "75g",
+          "fat": "24g"
+        },
+        {
+          "id": 3,
+          "name": "Chicken Palak Dry Combo",
+          "description": "Chicken palak dry + yellow dal + 2 multigrain roti + rice + salad",
+          "calories": "720 kcal",
+          "protein": "45g",
+          "carbs": "100g",
+          "fat": "15g"
+        },
+        {
+          "id": 4,
+          "name": "Chicken Mushroom Masala Combo",
+          "description": "Chicken mushroom masala + corn salad + 2 roti + curd + green chutney",
+          "calories": "750 kcal",
+          "protein": "62g",
+          "carbs": "70g",
+          "fat": "25g"
+        },
+        {
+          "id": 5,
+          "name": "Chicken Keema Peas Combo",
+          "description": "Chicken keema peas + rajma + 2 roti + rice + curd",
+          "calories": "800 kcal",
+          "protein": "48g",
+          "carbs": "105g",
+          "fat": "20g"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Protein Boost Chicken Thali",
+      "description": "High-protein chicken meals for fitness goals",
+      "items": [
+        {
+          "id": 6,
+          "name": "Chicken Soya Power Mix",
+          "description": "Chicken soya power mix + chana dal + 2 roti + rice + salad",
+          "calories": "900 kcal",
+          "protein": "60g",
+          "carbs": "110g",
+          "fat": "22g"
+        },
+        {
+          "id": 7,
+          "name": "Chicken Egg Bhurji Combo",
+          "description": "Chicken egg bhurji combo + 3 multigrain roti + sprout salad + curd + green chutney",
+          "calories": "750 kcal",
+          "protein": "52g",
+          "carbs": "80g",
+          "fat": "25g"
+        },
+        {
+          "id": 8,
+          "name": "Chicken Peanut Masala",
+          "description": "Chicken peanut masala + chole + 2 multigrain roti + brown rice + salad",
+          "calories": "850 kcal",
+          "protein": "52g",
+          "carbs": "95g",
+          "fat": "26g"
+        },
+        {
+          "id": 9,
+          "name": "Chicken Keema Rajma Combo",
+          "description": "Chicken keema rajma + soya + 3 multigrain roti + curd + green chutney",
+          "calories": "920 kcal",
+          "protein": "65g",
+          "carbs": "95g",
+          "fat": "38g"
+        },
+        {
+          "id": 10,
+          "name": "Chicken Paneer Combo Mix",
+          "description": "Chicken paneer combo mix + dal tadka + 2 roti + rice + curd",
+          "calories": "800 kcal",
+          "protein": "52g",
+          "carbs": "92g",
+          "fat": "25g"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Egg Fit Power Thali",
+      "description": "Protein-packed egg meals for energy",
+      "items": [
+        {
+          "id": 11,
+          "name": "Egg Curry Combo",
+          "description": "Egg curry + yellow dal + 2 roti + rice + salad",
+          "calories": "720 kcal",
+          "protein": "32g",
+          "carbs": "90g",
+          "fat": "20g"
+        },
+        {
+          "id": 12,
+          "name": "Egg Bhurji Combo",
+          "description": "Egg bhurji + 3 roti + green salad + green chutney",
+          "calories": "550 kcal",
+          "protein": "29g",
+          "carbs": "70g",
+          "fat": "19g"
+        },
+        {
+          "id": 13,
+          "name": "Boiled Eggs Mix Veg Combo",
+          "description": "3 boiled eggs + mix veg + 3 roti + salad + green chutney",
+          "calories": "650 kcal",
+          "protein": "36g",
+          "carbs": "77g",
+          "fat": "24g"
+        }
+      ]
+    }
+  ]
+}
