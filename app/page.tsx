@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowRight, Check, Users, Leaf, Clock, TrendingUp, Award, Zap, Phone, UtensilsCrossed, Target, ArrowUp } from "lucide-react"
+import { ArrowRight, Check, Users, Leaf, Clock, TrendingUp, Award, Zap, Phone, UtensilsCrossed, Target, ArrowUp, Building2 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { BubbleBackground } from "@/components/bubble-background"
@@ -171,6 +171,35 @@ export default function Home() {
                 <div className="absolute inset-0 rounded-2xl border border-white/40 pointer-events-none" />
             </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-8 px-6 relative">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-row items-center justify-center gap-6 sm:gap-12 md:gap-16">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/5 text-primary">
+                <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">5+</p>
+                <p className="text-xs text-muted-foreground">Companies</p>
+              </div>
+            </div>
+
+            <div className="w-px h-10 sm:h-12 bg-border"></div>
+
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-accent/5 text-accent">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">500+</p>
+                <p className="text-xs text-muted-foreground">Customers</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
