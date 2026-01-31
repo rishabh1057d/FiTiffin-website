@@ -3,14 +3,22 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowRight, Check, Users, Leaf, Clock, TrendingUp, Award, Zap, Phone, UtensilsCrossed, Target, ArrowUp, Building2 } from "lucide-react"
+import { ArrowRight, Check, Users, Leaf, Clock, TrendingUp, Award, Zap, Phone, UtensilsCrossed, Target, ArrowUp, Building2, Menu } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { BubbleBackground } from "@/components/bubble-background"
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [visibleSection, setVisibleSection] = useState<string | null>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +45,7 @@ export default function Home() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
               src="/WhatsApp_Image_2025-12-27_at_6.13.22_PM__1_-removebg-preview.png"
               alt="FiTiffin Logo"
@@ -45,7 +53,7 @@ export default function Home() {
               height={80}
               className="h-10 md:h-14 w-auto max-w-[170px] md:max-w-[260px] hover:scale-110 transition-transform"
             />
-          </div>
+          </Link>
           <div className="hidden md:flex items-center gap-8">
             <a
               href="#impact"
@@ -71,16 +79,87 @@ export default function Home() {
             >
               Partner With Us
             </Link>
+            <Link
+              href="/about"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/how-it-works"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              How It Works
+            </Link>
           </div>
           <div className="flex items-center gap-3">
-            <Link href="/cloud-kitchen-partner">
+            <div className="md:hidden">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="w-6 h-6" />
+                    <span className="sr-only">Open menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-72">
+                  <SheetHeader>
+                    <SheetTitle>Menu</SheetTitle>
+                  </SheetHeader>
+                  <nav className="flex flex-col gap-2 pt-4">
+                    <a
+                      href="#impact"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 px-4 rounded-lg text-muted-foreground hover:bg-primary/5 hover:text-primary transition-colors"
+                    >
+                      Impact
+                    </a>
+                    <a
+                      href="#benefits"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 px-4 rounded-lg text-muted-foreground hover:bg-primary/5 hover:text-primary transition-colors"
+                    >
+                      Why Us
+                    </a>
+                    <Link
+                      href="/menu"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 px-4 rounded-lg text-muted-foreground hover:bg-primary/5 hover:text-primary transition-colors"
+                    >
+                      Menu
+                    </Link>
+                    <Link
+                      href="/cloud-kitchen-partner"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 px-4 rounded-lg text-muted-foreground hover:bg-primary/5 hover:text-primary transition-colors"
+                    >
+                      Partner With Us
+                    </Link>
+                    <Link
+                      href="/about"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 px-4 rounded-lg text-muted-foreground hover:bg-primary/5 hover:text-primary transition-colors"
+                    >
+                      About Us
+                    </Link>
+                    <Link
+                      href="/how-it-works"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 px-4 rounded-lg text-muted-foreground hover:bg-primary/5 hover:text-primary transition-colors"
+                    >
+                      How It Works
+                    </Link>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
+            <Link href="/cloud-kitchen-partner" className="hidden sm:inline-flex">
               <Button variant="outline" className="rounded-full font-semibold border-2">
                 Partner With Us
               </Button>
             </Link>
             <Link href="/lead-capture">
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full font-semibold shadow-lg hover:shadow-xl transition-all">
-                Book Demo <ArrowRight className="ml-2 w-4 h-4" />
+                Book Demo <ArrowRight className="ml-2 w-4 h-4 hidden sm:inline" />
               </Button>
             </Link>
           </div>
@@ -148,13 +227,16 @@ export default function Home() {
           </div>
 
           <div
-            className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto animate-fade-in-up"
+            className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
             {[
               { title: "25g+", subtitle: "Protein Per Meal", accent: "from-emerald-500/15 to-emerald-500/5" },
               { title: "Fresh", subtitle: "Daily Delivery", accent: "from-lime-500/15 to-lime-500/5" },
               { title: "Custom", subtitle: "Tailored to You", accent: "from-amber-500/15 to-amber-500/5" },
+              { title: "Budget", subtitle: "Friendly Pricing", accent: "from-emerald-500/15 to-emerald-500/5" },
+              { title: "Monthly", subtitle: "Simple Billings", accent: "from-lime-500/15 to-lime-500/5" },
+              { title: "On Time", subtitle: "Timely Delivery", accent: "from-amber-500/15 to-amber-500/5" },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -539,9 +621,9 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link href="/how-it-works" className="hover:text-primary transition-colors">
                   How It Works
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">

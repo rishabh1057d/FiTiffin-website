@@ -100,13 +100,13 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Featured Meal Image Section */}
+      {/* Featured Meal Image Section - Stacked FiTiffin tiffins */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="relative rounded-2xl overflow-hidden border border-border h-80 md:h-96">
             <Image
-              src="/images/healthy-tiffin-meals.jpg"
-              alt="Beautifully plated healthy FiTiffin meals"
+              src="/images/IMG_6089.jpg"
+              alt="FiTiffin meal boxes stacked - fresh tiffin delivery"
               fill
               className="object-cover"
             />
@@ -123,6 +123,16 @@ export default function MenuPage() {
               <h2 className="text-3xl font-bold text-foreground">Vegetarian Menu</h2>
             </div>
             <p className="text-muted-foreground">Plant-based meals packed with protein and nutrients</p>
+          </div>
+
+          {/* Vegetarian meal showcase image */}
+          <div className="relative rounded-2xl overflow-hidden border border-border h-64 md:h-80 mb-16">
+            <Image
+              src="/images/IMG_6120.jpg"
+              alt="FiTiffin vegetarian thali - compartmentalized healthy meal"
+              fill
+              className="object-cover"
+            />
           </div>
 
           {vegetarianMenuData.categories.map((category) => (
@@ -184,6 +194,16 @@ export default function MenuPage() {
               <h2 className="text-3xl font-bold text-foreground">Non-Vegetarian Menu</h2>
             </div>
             <p className="text-muted-foreground">High-protein meals with lean proteins and balanced nutrition</p>
+          </div>
+
+          {/* Non-vegetarian meal showcase image */}
+          <div className="relative rounded-2xl overflow-hidden border border-border h-64 md:h-80 mb-16">
+            <Image
+              src="/images/IMG_6131.JPG.jpeg"
+              alt="FiTiffin non-vegetarian thali - complete meal with rice, curry and salad"
+              fill
+              className="object-cover"
+            />
           </div>
 
           {nonVegetarianMenuData.categories.map((category) => (
